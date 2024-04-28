@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import {Link} from 'react-router-dom';
+import Footer from "../../components/Footer";
 
 const Map = () => {
   const mapRef = useRef(null);
@@ -96,6 +97,7 @@ const Map = () => {
       <Link to="/menu" className="text-xl font-bold">
         Menu
       </Link>
+      <Footer/>
     </div>
   </div>
   );

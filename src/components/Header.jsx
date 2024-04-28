@@ -35,7 +35,7 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
         className={`${
           active
             ? "bg-opacity-50 bg-gradient-to-b from-gray-900 to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b border-[#ffffff1c] shadow-xl transition duration-500"
-            : "w-full border-b border-[#ffffff] h-[80px] z-[80] shadow"
+            : "w-full border-b border-[#00BFFF] h-[80px] z-[80] shadow"
         }`}
         // style={{ backgroundColor: '#ffffff' }}
       >
@@ -44,7 +44,7 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
             <div>
               <Link
                 to="/"
-                className={`text-[25px] font-Poppins font-[500] text-white`}
+                className={`text-[25px] font-Poppins font-[500] text-black`}
               >
                 SafeChild
               </Link>
@@ -54,7 +54,7 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
               <div className="800px:hidden">
                 <HiOutlineMenuAlt3
                   size={25}
-                  className="cursor-pointer text-white"
+                  className="cursor-pointer text-black"
                   onClick={() => setOpenSideBar(true)}
                 />
               </div>
@@ -62,7 +62,7 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
               {user ? (
                 <>
                   {user.role === "user" && (
-                    <Link to="/profile" className="hidden 800px:block">
+                    <Link to="/profile">
                       <img
                         src={user.avatar ? user.avatar.url : avatar}
                         alt=""
@@ -79,8 +79,8 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
                 </>
               ) : (
                 <HiOutlineUserCircle
-                  size={40}
-                  className="hidden 800px:block cursor-pointer text-white"
+                  size={25}
+                  className="hidden 800px:block cursor-pointer text-black"
                   onClick={() => setOpen(true)}
                 />
               )}
@@ -95,32 +95,14 @@ const Header = ({ open, setOpen, activeItem, route, setRoute }) => {
           >
             <div className="w-[70%] fixed z-[99999999] h-screen bg-slate-900 bg-opacity-90 top-0 right-0">
               <NavItems activeItem={activeItem} isMobile={true} />
-              {user ? (
-                <>
-                  {user.role === "user" && (
-                    <Link to="/profile" className="hidden 800px:block">
-                      <img
-                        src={user.avatar ? user.avatar.url : avatar}
-                        alt=""
-                        width={30}
-                        height={30}
-                        style={{
-                          border:
-                            activeItem === 5 ? "2px solid #ffc107" : "none",
-                        }}
-                        className="w-[30px] h-[30px] rounded-full"
-                      />
-                    </Link>
-                  )}
-                </>
-              ) : (
-                <HiOutlineUserCircle
-                  size={40}
-                  className="hidden 800px:block cursor-pointer text-white"
-                  onClick={() => setOpen(true)}
-                />
-              )}
+              <button
+                className="cursor-pointer ml-5 my-2 mt-5 text-white"
+                onClick={() => setOpen(true)}
+              >
+                Нэвтрэх
+              </button>
             </div>
+
           </div>
         )}
       </div>

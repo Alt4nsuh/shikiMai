@@ -1,0 +1,65 @@
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .chat {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-bubble {
+    align-self: flex-end;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+  }
+  
+  .response-bubble {
+    align-self: flex-start;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+  }
+  
+  .loading-bubble {
+    align-self: flex-start;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 70%;
+  }
+  
+  .input-form {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

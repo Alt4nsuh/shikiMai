@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from "../../components/Footer";
 
 class SafeZone extends Component {
   constructor(props) {
@@ -98,31 +99,31 @@ class SafeZone extends Component {
   render() {
     const { circleRadius } = this.state;
     return (
-      <div className="flex flex-col items-center h-screen">
-        <div id="map" className="w-full h-full"></div>
+      <div className="flex flex-col h-screen">
+        <div id="map" className="flex-grow"></div>
         <div className="flex flex-col md:flex-row justify-center space-y-2 md:space-x-2 md:space-y-0 mt-4">
-          <button onClick={this.handleSaveLocation} className="btn">
+          <button onClick={this.handleSaveLocation} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Save Location
           </button>
-          <button onClick={this.handleIncreaseCircleSize} className="btn">
+          <button onClick={this.handleIncreaseCircleSize} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Increase Circle Size
           </button>
-          <button onClick={this.handleDecreaseCircleSize} className="btn">
+          <button onClick={this.handleDecreaseCircleSize} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Decrease Circle Size
           </button>
-          <button onClick={this.handleLeadToArea} className="btn">
+          <button onClick={this.handleLeadToArea} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Lead to Area
           </button>
-          <Link to="/Lalar" className="btn">
+          <Link to="/Lalar" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             Return Home
           </Link>
         </div>
         <div className="mt-4 text-center">
           <p>Circle Size: {circleRadius.toFixed(0)} meters</p>
         </div>
+        <Footer/>
       </div>
     );
   }
 }
-
-export default SafeZone;
+export default SafeZone

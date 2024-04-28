@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { HiPlus } from 'react-icons/hi';
-import {Link} from 'react-router-dom';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import Footer from "../../components/Footer"
 
 const Safety = () => {
   const [contacts, setContacts] = useState([]);
   const [helpMessage, setHelpMessage] = useState('');
+  const [date, setDate] = useState(new Date());
 
   const addContact = () => {
     const email = prompt('Enter the email address of the new contact:');
@@ -18,38 +21,40 @@ const Safety = () => {
   };
 
   const sendEmergencyAlert = () => {
-    console.log("Emergency alert sent!");
+    console.log('Emergency alert sent!');
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl bg-white-500 text-white font-bold mb-4">Safety Page</h1>
-      
+      <h1 className="text-3xl bg-white-500 text-white font-bold mb-4">To-do list</h1>
+
       <div className="mb-8">
-        <h2 className="text-xl font-semibold text-white mb-2">Emergency Contacts</h2>
+        <h2 className="text-xl font-semibold text-white mb-2">Works</h2>
         <div className="flex flex-col md:flex-row mb-4 md:items-center">
-          <button 
+          <button
             className="flex items-center bg-blue-500 text-white py-2 px-4 rounded mb-2 md:mb-0 md:mr-4"
             onClick={addContact}
           >
-            <HiPlus className="mr-2" /> Add Contact
+            <HiPlus className="mr-2" /> Add work
           </button>
-          <button 
+          <button
             className="flex items-center bg-blue-500 text-white py-2 px-4 rounded"
             onClick={addContact}
           >
-            <HiPlus className="mr-2" /> Add Contact
+            <HiPlus className="mr-2" /> Add work
           </button>
         </div>
         <ul>
           {contacts.map((contact, index) => (
-            <li key={index} className="mb-1">{contact}</li>
+            <li key={index} className="mb-1">
+              {contact}
+            </li>
           ))}
         </ul>
       </div>
 
       <div className="mb-8">
-        <h2 className="text-xl font-semibold text-white mb-2">Help Message</h2>
+        <h2 className="text-xl font-semibold text-white mb-2">To-do list</h2>
         <textarea
           className="w-full border rounded p-2"
           value={helpMessage}
@@ -58,30 +63,21 @@ const Safety = () => {
         ></textarea>
       </div>
 
-      <button 
-        className="bg-red-500 text-white py-2 px-4 w-full h-full rounded"
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold w-full text-white mb-2">Calendar</h2>
+        <div className="calendar-container">
+          <Calendar value={date} onChange={setDate} />
+        </div>
+      </div>
+
+      <button
+        className="bg-red-500 text-white py-2 px-4 w-full h-full rounded mb-4"
         onClick={sendEmergencyAlert}
       >
-        Send Emergency Alert
+        Set alarm
       </button>
-      <div className="flex flex-col h-screen">
-      <div className="flex justify-between bg-gray-800 text-white px-4 py-2">
-        <Link to="/safety" className="text-xl font-bold">
-          Safety
-        </Link>
-        <Link to="/mapPlace" className="text-xl font-bold">
-          Places
-        </Link>
-        <Link to="/SafeZone" className="text-xl font-bold">
-          Safety-zone
-        </Link>
-        <Link to="/menu" className="text-xl font-bold">
-          Menu
-        </Link>
-      </div>
+      <Footer/>
     </div>
-    </div>
-    
   );
 };
 

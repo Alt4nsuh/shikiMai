@@ -23,6 +23,9 @@ module.exports = {
         "400px": "400px",
         "200px": "200px",
       },
+      fontFamily: {
+        custom: ['Roboto', 'sans'],
+      },
     },
   },
   plugins: [],

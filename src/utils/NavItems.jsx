@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 export const navItemsData = [
-  {
-    name: "Өрөөнүүд",
-    url: "/rooms",
-  },
+  // {
+  //   name: "Өрөөнүүд",
+  //   url: "/rooms",
+  // },
 ];
 
 const NavItems = ({ activeItem, isMobile }) => {
@@ -16,7 +16,7 @@ const NavItems = ({ activeItem, isMobile }) => {
             <Link to={item.url} key={index}>
               <span
                 className={`${
-                  activeItem === index ? "text-[#37a39a]" : "text-white"
+                  activeItem === index ? "text-[]" : "text-white"
                 }  text-[18px] px-6 font-Poppins font-[400]`}
               >
                 {item.name}
@@ -30,7 +30,7 @@ const NavItems = ({ activeItem, isMobile }) => {
             <Link to="/"
               className={`text-[25px] font-Poppins font-[500] text-white`}
             >
-              ELearning
+              SafeChild
             </Link>
           </div>
           {navItemsData &&

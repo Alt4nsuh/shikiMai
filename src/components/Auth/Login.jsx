@@ -11,8 +11,7 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid Email!")
     .required("Please enter your email!"),
-  password: Yup.string().required("Please enter your password!").min(8),
-});
+  password: Yup.string().required("Please enter your password!").min(8)});
 
 const Login = ({ setRoute, setOpen }) => {
   const [show, setShow] = useState(false);
@@ -46,13 +45,14 @@ const Login = ({ setRoute, setOpen }) => {
   return (
     <div className="w-full">
       <h1
-        className={`${"text-[25px] text-white font-[500] font-Poppins text-center py-2 "}`}
+        className={`${"text-[25px] text-black font-[500] font-Poppins text-center py-2 "}`}
       >
-        Login with SafeChild
+        {/* Login with SafeChild */}
+        SafeChild-т нэвтрэх
       </h1>
       <form onSubmit={handleSubmit}>
-        <label className={`${"text-[16px] font-Poppins text-white "}`}>
-          Enter Your Email
+        <label className={`${"text-[16px] font-Poppins text-black "}`}>
+          Имэйл хаяг оруулна уу 
         </label>
         <input
           type="email"
@@ -63,14 +63,14 @@ const Login = ({ setRoute, setOpen }) => {
           placeholder="loginmail@gmail.com"
           className={`${
             errors.email && touched.email && "border-red-500"
-          } ${"w-full text-white bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins"}`}
+          } ${"w-full text-black bg-white border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins"}`}
         />
         {errors.email && touched.email && (
           <span className="text-red-500 pt-2 block">{errors.email}</span>
         )}
         <div className="w-full mt-5 relative mb-1">
-          <label className={`${"text-[16px] font-Poppins text-white "}`}>
-            Enter Your Password
+          <label className={`${"text-[16px] font-Poppins text-black "}`}>
+            Нууц үгээ оруулна уу
           </label>
           <input
             type={!show ? "password" : "text"}
@@ -81,17 +81,17 @@ const Login = ({ setRoute, setOpen }) => {
             placeholder="password!@%"
             className={`${
               errors.password && touched.password && "border-red-500"
-            } ${"w-full text-white bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins"}`}
+            } ${"w-full text-black bg-white border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins"}`}
           />
           {!show ? (
             <AiOutlineEyeInvisible
-              className="absolute bottom-2 right-2 z-4 cursor-pointer text-white"
+              className="absolute bottom-2 right-2 z-4 cursor-pointer text-black"
               size={20}
               onClick={() => setShow(true)}
             />
           ) : (
             <AiOutlineEye
-              className="absolute bottom-2 right-2 z-4 cursor-pointer text-white"
+              className="absolute bottom-2 right-2 z-4 cursor-pointer text-black"
               size={20}
               onClick={() => setShow(false)}
             />
@@ -103,18 +103,18 @@ const Login = ({ setRoute, setOpen }) => {
         <div className="w-full mt-5">
           <input
             type="submit"
-            value="Login"
-            className={`${"flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2100ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold text-white"}`}
+            value="Нэвтрэх"
+            className={`${"flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#00BFFF] min-h-[45px] w-full text-[16px] font-Poppins font-semibold text-black"}`}
           />
         </div>
         <br />
-        <h5 className="text-center pt-4 font-Poppins text-[14px] text-white">
-          Not have any Account?{" "}
+        <h5 className="text-center pt-4 font-Poppins text-[14px] text-black">
+          Бүртгэлгүй бол?{" "}
           <span
-            className="text-[#2190ff] pl-1 cursor-pointer"
+            className="text-[#00BFFF] pl-1 cursor-pointer"
             onClick={() => setRoute("Sign-Up")}
           >
-            Sign Up
+            Бүртгүүлэх
           </span>
         </h5>
       </form>

@@ -4,8 +4,8 @@ const Profile = () => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200">
-        <h1 className="text-xl font-medium text-gray-800">Profile</h1>
-        <button className="text-blue-500 hover:text-blue-700">Change Photo</button>
+        <h1 className="text-xl font-medium text-white-800">Профайл</h1>
+        <button className="text-red-500 hover:text-red-700">Профайл устгах</button>
       </div>
       <div className="flex flex-col items-center px-4 py-4 space-y-2">
         <img
@@ -14,23 +14,23 @@ const Profile = () => {
           alt="Profile"
         />
         <div className="text-center">
-          <p className="text-lg font-medium text-gray-800">Davaasambuu B.</p>
-          <button className="text-sm text-blue-500 hover:text-blue-700">EDIT</button>
+          <p className="text-lg font-medium text-white-800">Davaasambuu B.</p>
+          <button className="text-sm text-white-500 hover:text-blue-700">Зураг солих</button>
         </div>
       </div>
       <div className="px-4 py-4 border-b border-gray-200">
-        <p className="text-gray-700 font-medium">Email</p>
-        <p className="text-gray-500 pt-2">bdavaasambuu011@gmail.com</p>
+        <p className="text-white-700 font-medium">Эмайл</p>
+        <p className="text-white-500 pt-2">bdavaasambuu011@gmail.com</p>
       </div>
       <div className="px-4 py-4 border-b border-gray-200">
-        <p className="text-gray-700 font-medium">Contact Number</p>
-        <p className="text-gray-500 pt-2">NA</p>
-        <button className="text-sm text-blue-500 hover:text-blue-700 pt-2">EDIT</button>
+        <p className="text-white-700 font-medium">Утасны дугаар</p>
+        <p className="text-white-500 pt-2">NA</p>
+        <button className="text-sm text-white-500 hover:text-blue-700 pt-2">Засах</button>
       </div>
       <div className="flex items-center justify-center py-4">
         <Link to="/Menu">
-          <button className="px-4 py-2 text-sm font-medium text-center text-gray-500 hover:text-gray-700">
-            DONE? (Tap to go back)
+          <button className="px-4 py-2 text-sm font-medium text-center text-white-500 hover:text-gray-700">
+            Болсон
           </button>
         </Link>
       </div>

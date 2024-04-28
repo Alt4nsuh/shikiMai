@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from "../../../components/Footer";
 
 function Lalar() { // Consider renaming to a more descriptive name
   const mapRef = useRef(null);
@@ -31,18 +32,7 @@ function Lalar() { // Consider renaming to a more descriptive name
     <div className="flex flex-col h-screen">
       <div ref={mapRef} className="flex-grow" />
       <div className="flex justify-between bg-gray-800 text-white px-4 py-2">
-        <Link to="/safety" className="text-xl font-bold">
-          Safety
-        </Link>
-        <Link to="/mapPlace" className="text-xl font-bold">
-          Places
-        </Link>
-        <Link to="/SafeZone" className="text-xl font-bold">
-          Safety-zone
-        </Link>
-        <Link to="/menu" className="text-xl font-bold">
-          Menu
-        </Link>
+        <Footer/>
       </div>
     </div>
   );

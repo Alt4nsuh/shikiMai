@@ -17,13 +17,13 @@ const Footer = () => {
             <Link to="/safety" className="text-xl font-bold">
               <FiCalendar className="inline-block mr-2" />
             </Link>
-            <Link to="/room" className="text-xl font-bold">
+            <Link to="/Map" className="text-xl font-bold">
               <FiMap className="inline-block mr-2" />
             </Link>
             <Link to="/SafeZone" className="text-xl font-bold">
               <FiBookOpen className="inline-block mr-2" />
             </Link>
-            <Link to="/menu" className="text-xl font-bold">
+            <Link to="/Menu" className="text-xl font-bold">
               <FiMenu className="inline-block mr-2" />
             </Link>
           </div>
