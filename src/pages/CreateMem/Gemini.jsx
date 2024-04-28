@@ -1,10 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import React, { useEffect, useState } from "react";
-
-const API_KEY = "AIzaSyCcB3pUv67Kqq0tOogl3nyY9lV1BKJ4NAo"; // Replace with your actual API key
+import {Link} from "react-router-dom";
+const API_KEY = "AIzaSyCcB3pv67Kqq0tOogl3nyY9lV1BKJ4NAo"; // Replace with your actual API key
 
 const Gemini = () => {
-  const [prompt, setPrompt] = useState("Write a story about a magic backpack.");
+  const [prompt, setPrompt] = useState(".");
   const [story, setStory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -74,6 +74,9 @@ const Gemini = () => {
           className="p-4 rounded-md border border-gray mr-4"
         />
         <button type="submit" disabled={isLoading} className="p-4 rounded-md bg-gray text-white cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed">Send</button>
+        <Link to="/Menu" className="menu-link text-red-500">
+          <span className="text-base font-normal">Буцах</span>
+        </Link>
       </form>
     </div>
   );
